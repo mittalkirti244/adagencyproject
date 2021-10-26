@@ -1,6 +1,7 @@
-module.exports = cds.service.impl(async function() {
+const cds = require('@sap/cds');
+module.exports = cds.service.impl(async function () {
 
-    const { Country, CountryText} = this.entities;
+    const { Country, CountryText } = this.entities;
 
     const service = await cds.connect.to('country');
 

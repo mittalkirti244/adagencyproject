@@ -1,13 +1,10 @@
 using from './adDetail-service';
 using from '@sap/cds/common';
 
-
 annotate AdDetailService.AdDetails with @odata.draft.enabled;
 
 annotate AdDetailService.AdDetails with @(UI : {
-    SelectionFields     : [
-        categoryName
-    ],
+    SelectionFields     : [categoryName],
     LineItem            : [
         {
             Value : userID,
@@ -74,7 +71,6 @@ annotate AdDetailService.AdDetails with {
     image
 };
 
-
 annotate AdDetailService.AdDetails with {
     ID           @title : '{i18n>Ad ID}';
     title        @title : '{i18n>Ad Title}';
@@ -106,19 +102,20 @@ annotate AdDetailService.AdDetails with {
             CollectionPath  : 'CountryText',
             Label           : 'Country Text',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'adCountry',
-                ValueListProperty : 'Country'
-            },
-            {
-               $Type             : 'Common.ValueListParameterFilterOnly',
-                ValueListProperty : 'countryName' 
-            },
-            {
-               $Type             : 'Common.ValueListParameterFilterOnly',
-                ValueListProperty : 'language' 
-            }
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'adCountry',
+                    ValueListProperty : 'Country'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterFilterOnly',
+                    ValueListProperty : 'countryName'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterFilterOnly',
+                    ValueListProperty : 'language'
+                }
             ]
         }
     });

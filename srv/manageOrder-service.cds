@@ -9,6 +9,7 @@ service ManageOrdersService {
 
 @readonly
    entity StatusCode as projection on ad.MyOrderStatus;
+   
 
 @readonly
    entity Country as projection on cntry.A_Country{

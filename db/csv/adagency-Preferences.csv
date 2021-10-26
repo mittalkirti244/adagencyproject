@@ -1,5 +1,5 @@
-preferenceType;preferenceCost;desc
-Top;500;Ad should be visible on Top of the Website
-Middle;700;Ad Should be visible on Middle of the Website.
-Bottom;900;Ad Should be visible on Bottom of the Website.
-Ribbon;1200;
+ID;preferenceType;preferenceCost;desc
+1001;Top;500;Ad should be visible on Top of the Website
+1002;Middle;700;Ad Should be visible on Middle of the Website.
+1003;Bottom;900;Ad Should be visible on Bottom of the Website.
+1004;Ribbon;1200;Ad should have long text.
