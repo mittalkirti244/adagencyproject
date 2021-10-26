@@ -11,18 +11,20 @@ desc: String
 
 entity ContentDetails:cuid
 {
-key ID: UUID  @odata.Type:'Edm.String' @title : '{i18n>Content Id}' @Core.Computed;
-contentType:String @title : '{i18n>Content Type}';
-contentSize: Integer @title : '{i18n>Content Size (in word/in mb)}';
-contentCost: Double@title : '{i18n>Content Cost(per word/per mb)}';
-desc: String
+ ID: UUID  @odata.Type:'Edm.String' @title : '{i18n>Content Id}' @Core.Computed;
+key contentType:String @title : '{i18n>Content Type}';
+contentSizeLimit: Integer @title : '{i18n>Content Size Limit}';
+contentCost: Double@title : '{i18n>Content Cost(in Rs)}';
+desc: String;
+unitOfMeasurement:String@title : '{i18n>Measurement Unit}'
 
 }
 
 entity PaymentPlan:cuid
 {
 key ID:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
-   content: association to ContentDetails;
+  // content: association to ContentDetails;
+  content:String;
    preferences: association to Preferences;
    startDate: Date @title : '{i18n>Start Date}';
    endDate: Date @title : '{i18n>End Date}';
