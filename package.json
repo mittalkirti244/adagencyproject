@@ -62,6 +62,11 @@
     }
   },
   "sapux": [
-    "app/project1"
+    "app/project1",
+    "app/category",
+    "app/prefrences",
+    "app/contentdetails",
+    "app/paymentplan",
+    "app/manageorder"
   ]
 }
