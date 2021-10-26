@@ -107,8 +107,9 @@ UI : {
     LineItem            : [
        // {Value : ID},
         {Value : contentType},
-        {Value : contentSize},
+        {Value : contentSizeLimit},
         {Value : contentCost},
+        {Value:unitOfMeasurement}
 
 
     ],
@@ -137,8 +138,9 @@ UI : {
     ],
     FieldGroup #General : {Data : [
         {Value : contentType},
-        {Value : contentSize},
+        {Value : contentSizeLimit},
         {Value : contentCost},
+        {Value: unitOfMeasurement}
 
     ]},
     FieldGroup #Details : {Data : [
@@ -175,6 +177,10 @@ annotate AdAgencyServices.ContentDetails with {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'contentCost'
                 },
+                {
+                   $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'unitOfMeasurement' 
+                }
             ]
         }
     });
