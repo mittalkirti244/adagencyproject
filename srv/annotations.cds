@@ -121,7 +121,74 @@ annotate AdDetailService.AdDetails with {
     });
 }
 
-annotate AdDetailService.Category with {
-    ID   @title : '{i18n>Category ID}';
-    name @title : '{i18n>Category Name}'
-}
+// annotate AdDetailService.Category with {
+//     ID   @title : '{i18n>Category ID}';
+//     name @title : '{i18n>Category Name}'
+// }
+annotate AdDetailService.Category with @odata.draft.enabled;
+
+annotate AdDetailService.Category with @(
+
+UI : {
+
+    SelectionFields     : [name],
+
+    LineItem            : [
+
+        {
+            $Type : 'UI.DataField',
+            Value : ID,
+            Label : 'ID'
+        },
+
+        {
+            $Type : 'UI.DataField',
+            Value : name,
+            Label : 'Category'
+        },
+
+    ],
+
+
+    HeaderInfo          : {
+
+        TypeName       : 'Category',
+        TypeNamePlural : 'Category',
+
+        Title          : {
+            Value : name,
+            Label : 'Category'
+        },
+
+    },
+
+    Facets              : [
+
+    {
+        $Type  : 'UI.ReferenceFacet',
+        Label  : '{i18n>Description}',
+        Target : '@UI.FieldGroup#General'
+    }
+
+
+    ],
+
+    FieldGroup #General : {
+
+    Data : [
+
+    {
+        Value : Description,
+        Label : 'Description'
+    }
+
+
+    ]
+
+    },
+
+
+},
+
+
+);
