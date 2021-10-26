@@ -15,6 +15,9 @@
         "@sap/ux-specification": "^1.90.12",
         "sqlite3": "^5.0.2"
     },
+     "engines": {
+        "node": ">=14"
+    },
     "scripts": {
         "start": "cds run",
         "watch-project1": "cds watch --open project1/webapp/index.html#fe-lrop-v4"
