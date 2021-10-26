@@ -66,9 +66,8 @@
             "deploy-format": "hdbtable"
         }
 
-      }
-    }
-  },
+      
+},
   "sapux": [
     "app/project1",
     "app/category",
@@ -79,4 +78,3 @@
   ]
 }
   
-
