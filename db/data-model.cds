@@ -2,9 +2,8 @@ namespace adagency;
 
 using {cuid} from '@sap/cds/common';
 
-using {country as c} from '../srv/external/country';
+//using {country as c} from '../srv/external/country';
 //using {country as c} from '../srv/adDetail-service';
-
 //using {CountryText as Country/} from '../srv/adDetail-service';
 
 entity AdDetails : cuid {
@@ -13,6 +12,7 @@ entity AdDetails : cuid {
         title          : String;
         textContent    : LargeString;
         adCountry      : String(3);
+        adLanguage     : String(2);
         category       : Association to Category;
         graphicContent : Association to many GraphicContent
                              on graphicContent.addetails = $self;
