@@ -139,21 +139,21 @@ annotate AdDetailService.AdDetails with {
     });
 }
 
-annotate AdDetailService.AdDetails with {
-    userID @(Common : {
-        FieldControl : #Mandatory,
-        ValueList    : {
-            CollectionPath  : 'UserProf',
-            Label           : 'User profile',
-            SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'userID',
-                ValueListProperty : 'ID'
-            }]
-        }
-    });
-}
+// annotate AdDetailService.AdDetails with {
+//     userID @(Common : {
+//         FieldControl : #Mandatory,
+//         ValueList    : {
+//             CollectionPath  : 'UserProf',
+//             Label           : 'User profile',
+//             SearchSupported : true,
+//             Parameters      : [{
+//                 $Type             : 'Common.ValueListParameterInOut',
+//                 LocalDataProperty : 'userID',
+//                 ValueListProperty : 'ID'
+//             }]
+//         }
+//     });
+// }
 
 
 // annotate AdDetailService.Category with {
