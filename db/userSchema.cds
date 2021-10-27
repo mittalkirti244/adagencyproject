@@ -2,6 +2,7 @@ namespace adagency;
 
 
 
+
 entity User {
 
         ID          : UUID @odata.Type : 'Edm.String'  @Core.Computed;
@@ -47,4 +48,8 @@ type Gender : String enum {
     Female
 
 }
+
+
+
+   
 

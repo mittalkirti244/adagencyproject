@@ -1,3 +1,4 @@
+
 using from './adagency-userprofile';
 
 annotate UserProfile.User with @odata.draft.enabled;
@@ -6,11 +7,13 @@ annotate UserProfile.User with @(UI : {
     LineItem            : [
         {
             Value : ID,
-            Label : 'User ID',
+
+            Label : 'User ID',
         },
         {
             $Type : 'UI.DataField',
             Value : firstName
+
         },
         {
             $Type : 'UI.DataField',
@@ -53,11 +56,18 @@ annotate UserProfile.User with @(UI : {
         TypeNamePlural : '{i18n>Users List}',
         Title          : {Value : ID},
     },
+
+        }
+    ],
+
+  
+
     Facets              : [{
         $Type  : 'UI.ReferenceFacet',
         Label  : '{i18n>General}',
         Target : '@UI.FieldGroup#General'
     }],
+
     FieldGroup #General : {Data : [
         {Value : firstName},
         {Value : lastName},
@@ -123,3 +133,4 @@ annotate UserProfile.User with {
     });
 
 }
+
