@@ -6,7 +6,10 @@ using from '@sap/cds/common';
 annotate AdDetailService.AdDetails with @odata.draft.enabled;
 
 annotate AdDetailService.AdDetails with @(UI : {
-    SelectionFields     : [categoryName,userID],
+    SelectionFields     : [
+        categoryName,
+        userID
+    ],
     LineItem            : [
         {
             Value : userID,
@@ -53,10 +56,10 @@ annotate AdDetailService.AdDetails with @(UI : {
         {Value : userID},
         {Value : title},
         {Value : textContent},
-        {Value : categoryName},
+        {Value : category_ID},
         {Value : adCountry},
         {
-            Value : graphicContent.image,
+            Value : image,
             Label : 'File Name'
         }
     ]}
@@ -68,21 +71,22 @@ annotate AdDetailService.AdDetails with {
 };
 
 
-annotate AdDetailService.AdDetails with {
-    @UI.IsImageUrl : true
-    image
-};
+// annotate AdDetailService.AdDetails with {
+//     @UI.IsImageUrl : true
+//     image
+// };
 
 annotate AdDetailService.AdDetails with {
     ID           @title : '{i18n>Ad ID}';
     title        @title : '{i18n>Ad Title}';
     categoryName @title : '{i18n>Category Name}';
     textContent  @title : '{i18n> Text Content}';
-    userID       @title : '{i18n> User IDs}';
+    userID       @title : '{i18n> User ID}';
+    adCountry    @title : '{i18n>Country}';
 }
 
 annotate AdDetailService.AdDetails with {
-    categoryName @(Common : {
+    category @(Common : {
         FieldControl : #Mandatory,
         ValueList    : {
             CollectionPath  : 'Category',
@@ -90,12 +94,33 @@ annotate AdDetailService.AdDetails with {
             SearchSupported : true,
             Parameters      : [{
                 $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'categoryName',
-                ValueListProperty : 'name'
-            }]
+                LocalDataProperty : 'category_ID',
+                ValueListProperty : 'ID'
+            },
+             {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'name'
+                }, 
+            ]
         }
     });
 }
+
+// annotate AdDetailService.AdDetails with {
+//     category_ID @(Common : {
+//         FieldControl : #Mandatory,
+//         ValueList    : {
+//             CollectionPath  : 'Category',
+//             Label           : 'Category',
+//             SearchSupported : true,
+//             Parameters      : [{
+//                 $Type             : 'Common.ValueListParameterInOut',
+//                 LocalDataProperty : 'category_ID',
+//                 ValueListProperty : 'ID'
+//             }]
+//         }
+//     });
+// }
 
 annotate AdDetailService.AdDetails with {
     userID @(Common : {
@@ -198,10 +223,7 @@ UI : {
     {
         Value : Description,
         Label : 'Description'
-    }
-
-
-    ]
+    }]
 
     },
 

@@ -18,7 +18,16 @@ service AdDetailService {
 
     entity UserProf as projection on u.User;
 
+    @Capabilities : {
+        Insertable : true,
+        Deletable  : true
+    }
     entity Category       as projection on Ad.Category;
+
+    @Capabilities : {
+        Insertable : true,
+        Deletable  : true
+    }
     entity GraphicContent as projection on Ad.GraphicContent;
 
     @readonly
