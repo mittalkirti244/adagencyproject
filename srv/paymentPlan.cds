@@ -1,5 +1,7 @@
 //using from './adagency-paymentplan';
 using from './adagency-service';
+using from './adDetail-service';
+using from './adagency-userprofile';
 using from '@sap/cds/common';
 
 annotate AdAgencyServices.PaymentPlanDetails with @odata.draft.enabled;
@@ -12,7 +14,8 @@ UI:{
        // {Value: cType},
        // {Value: cSize},
        // {Value: cCost},
-       {Value:content},
+       {Value:content_contentType, Label:'{i18n>Content}'},
+       
         {Value: pType},
         {Value: pCost},
         {Value: startDate},
@@ -46,8 +49,12 @@ UI:{
               //{Value:cSize},
                // {Value:cCost},
                 {Value:startDate},
-                {Value:content},
+                {Value:content_contentType, Label:'{i18n>Contents}'},
                 {Value:endDate},
+                {Value:userID,Label:'{i18n>User Id}'},
+                {Value:adId,Label:'{i18n>Ad Id}'}
+                
+                
 //                         {
 //     $Type : 'UI.DataFieldWithUrl',
 //     Value : preferences_ID,
@@ -75,8 +82,8 @@ annotate AdAgencyServices.PaymentPlanDetails with {
             Parameters      : [
                 {
                     $Type             : 'Common.ValueListParameterInOut',
-                   // LocalDataProperty : 'content_contentType',
-                   LocalDataProperty : 'content',
+                   LocalDataProperty : 'content_contentType',
+                  // LocalDataProperty : 'content',
                     ValueListProperty : 'contentType',
                 },
                 // {
@@ -154,6 +161,37 @@ annotate AdAgencyServices.PaymentPlanDetails with {
                 },   
                
             ]
+        }
+    });
+}
+annotate AdAgencyServices.PaymentPlanDetails with {
+    userID @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'UserProf',
+            Label           : 'User profile',
+            SearchSupported : true,
+            Parameters      : [{
+                $Type             : 'Common.ValueListParameterInOut',
+                LocalDataProperty : 'userID',
+                ValueListProperty : 'ID'
+            }]
+        }
+    });
+}
+
+annotate AdAgencyServices.PaymentPlanDetails with {
+    adId @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'AdDetails',
+            Label           : 'Ad Id',
+            SearchSupported : true,
+            Parameters      : [{
+                $Type             : 'Common.ValueListParameterInOut',
+                LocalDataProperty : 'adId',
+                ValueListProperty : 'ID'
+            }]
         }
     });
 }

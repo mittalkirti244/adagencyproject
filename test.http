@@ -1,0 +1,22 @@
+
+###
+POST http://localhost:4004/adDetail/AdDetails
+Content-Type: application/json
+{   
+     "userID":"123",    
+    "title":"Kirti",    
+    "category_ID":"10",    
+    "adCountry":"AF"}
+
+
+####
+POST http://localhost:4004/adDetail/Category
+Content-Type: application/json
+{    "name":"sdc", 
+   "Description":"wsddwe"
+}
+
+
+###GET
+ http://localhost:4004/adDetail/adDetails
+

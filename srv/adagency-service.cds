@@ -1,5 +1,8 @@
 using adagency from '../db/schema';
+using {AdDetailService as ad}from './adDetail-service';
 using {country as count} from './external/country';
+using {UserProfile as u }from './adagency-userprofile';
+ 
 
 service AdAgencyServices 
  {
@@ -26,6 +29,13 @@ service AdAgencyServices
     {
         key Country,CountryName,Language
     };
+@readonly
+    entity UserProf as projection on u.User;
+@readonly
+    entity AdDetails as projection on ad.AdDetails
+
+    
+    function getPreferenceId(preferenceType1: String) returns String;
 
  }
      

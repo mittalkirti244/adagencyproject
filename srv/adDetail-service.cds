@@ -1,5 +1,7 @@
 using adagency as Ad from '../db/data-model';
 using {country as c} from './external/country';
+using {UserProfile as u }from './adagency-userprofile';
+ 
 //using { country as c } from './external/country.csn';
 
 service AdDetailService {
@@ -27,5 +29,9 @@ service AdDetailService {
     entity CountryText    as projection on c.A_CountryText {
         key Country, CountryName as countryName, Language as language
     };
+
+
+ entity UserProf as projection on u.User;
+
 
 }

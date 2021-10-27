@@ -23,8 +23,10 @@ unitOfMeasurement:String@title : '{i18n>Measurement Unit}'
 entity PaymentPlan:cuid
 {
 key ID:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
-  // content: association to ContentDetails;
-  content:String;
+  content: association to ContentDetails;
+  userID: String;
+  adId: String;
+  //content:String  @title : '{i18n>Contents}';
    preferences: association to Preferences;
    startDate: Date @title : '{i18n>Start Date}';
    endDate: Date @title : '{i18n>End Date}';
