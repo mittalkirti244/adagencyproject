@@ -57,9 +57,7 @@ annotate UserProfile.User with @(UI : {
         Title          : {Value : ID},
     },
 
-        }
-    ],
-
+    
   
 
     Facets              : [{

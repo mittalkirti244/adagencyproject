@@ -16,7 +16,7 @@ service AdDetailService {
     entity AdDetails      as projection on Ad.AdDetails {
         * , category.name as categoryName
     };
-
+@readonly
     entity UserProf as projection on u.User;
 
     entity Category       as projection on Ad.Category;
@@ -33,7 +33,7 @@ service AdDetailService {
     };
 
 
- entity UserProf as projection on u.User;
+
 
 
 }
