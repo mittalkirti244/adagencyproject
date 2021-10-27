@@ -1,5 +1,6 @@
 using adagency as Ad from '../db/data-model';
 using {country as c} from './external/country';
+using {UserProfile as u }from './adagency-userprofile';
 //using { country as c } from './external/country.csn';
 
 service AdDetailService {
@@ -14,6 +15,8 @@ service AdDetailService {
     entity AdDetails      as projection on Ad.AdDetails {
         * , category.name as categoryName
     };
+
+    entity UserProf as projection on u.User;
 
     entity Category       as projection on Ad.Category;
     entity GraphicContent as projection on Ad.GraphicContent;

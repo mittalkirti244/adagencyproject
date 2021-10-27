@@ -1,0 +1,1 @@
+using UserProfile as service from '../../srv/adagency-userprofile';
