@@ -21,6 +21,7 @@ entity AdDetails : cuid {
 entity Category {
     key ID   : UUID @odata.Type : 'Edm.String'  @Core.Computed;
         name : String;
+         Description : String;
 }
 
 entity GraphicContent {
