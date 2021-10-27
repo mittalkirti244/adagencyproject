@@ -1,2 +1,5 @@
-id;content;preferences_ID
-12;video;3
+
+id;content_contentType;preferences_ID;startDate;endDate
+12;video;1001;12/04/2020;13/03/2020
+
+

@@ -1,6 +1,6 @@
 using from './adDetail-service';
 using from './adagency-userprofile';
-using from '../db/userSchema';
+
 using from '@sap/cds/common';
 
 annotate AdDetailService.AdDetails with @odata.draft.enabled;
@@ -138,6 +138,23 @@ annotate AdDetailService.AdDetails with {
         }
     });
 }
+
+annotate AdDetailService.AdDetails with {
+    userID @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'UserProf',
+            Label           : 'User profile',
+            SearchSupported : true,
+            Parameters      : [{
+                $Type             : 'Common.ValueListParameterInOut',
+                LocalDataProperty : 'userID',
+                ValueListProperty : 'ID'
+            }]
+        }
+    });
+}
+
 
 // annotate AdDetailService.Category with {
 //     ID   @title : '{i18n>Category ID}';
