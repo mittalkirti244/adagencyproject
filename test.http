@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ###
 POST http://localhost:4004/adDetail/AdDetails
 Content-Type: application/json
@@ -19,4 +20,27 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4004/adDetail/adDetails
+=======
+
+###
+POST http://localhost:4004/adDetail/AdDetails
+Content-Type: application/json
+{   
+     "userID":"123",    
+    "title":"Kirti",    
+    "category_ID":"10",    
+    "adCountry":"AF"}
+
+
+####
+POST http://localhost:4004/adDetail/Category
+Content-Type: application/json
+{    "name":"sdc", 
+   "Description":"wsddwe"
+}
+
+
+###GET
+ http://localhost:4004/adDetail/adDetails
+>>>>>>> adcf2741b42f2ce719335fb68ed0c9a69310d9ee
 

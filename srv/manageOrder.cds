@@ -1,4 +1,5 @@
 using from './manageOrder-service';
+using from './adagency-service';
 
 annotate ManageOrdersService.ManageOrder with @odata.draft.enabled;
 annotate ManageOrdersService.ManageOrder with @( 
@@ -10,18 +11,18 @@ UI:{
         {
             $Type: 'UI.DataField',
             Value: ID,
-            Label:'{i18n>ID}'
+            Label:'{i18n>Order ID}'
             },
         {
             $Type: 'UI.DataField',
             Value: planID, 
             Label:'{i18n>Plan ID}'
             },
-       {
-           $Type: 'UI.DataField',
-           Value: description,
-           Label:'{i18n>Description}'
-           },
+    //    {
+    //        $Type: 'UI.DataField',
+    //        Value: description,
+    //        Label:'{i18n>Description}'
+    //        },
       
         {
             $Type: 'UI.DataField',
@@ -92,7 +93,7 @@ UI:{
          FieldGroup#Details: {
             Data: [
                 {Value: planID,Label:'{i18n>Plan ID}'},
-                {Value: description,Label:'{i18n>Description}'},
+               // {Value: description,Label:'{i18n>Description}'},
                 {Value: address,Label:'{i18n>Address}'},
                 {Value: country,Label:'{i18n>Country}'},
                 {Value: totalAmount,Label:'{i18n>Total Amount}'},
@@ -120,6 +121,53 @@ status @(Common : {
                     $Type             : 'Common.ValueListParameterInOut',
                     LocalDataProperty : 'status',
                     ValueListProperty : 'code'
+                },
+            ]
+        },
+    })
+};
+
+annotate ManageOrdersService.ManageOrder with{
+planID @(Common : {
+       // ValueListWithFixedValues,
+        ValueList : {
+            $Type          : 'Common.ValueListType',
+            CollectionPath : 'planDetails',
+            Parameters     : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'planID',
+                    ValueListProperty : 'ID'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'adId'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'pCost'
+                }
+            ]
+        },
+    })
+};
+
+
+annotate ManageOrdersService.ManageOrder with{
+totalAmount @(Common : {
+       // ValueListWithFixedValues,
+        ValueList : {
+            $Type          : 'Common.ValueListType',
+            CollectionPath : 'planDetails',
+            Parameters     : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'totalAmount',
+                    ValueListProperty : 'pCost'
+                },
+                 {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'ID'
                 },
             ]
         },

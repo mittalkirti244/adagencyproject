@@ -85,11 +85,11 @@
                     "name": "AdDetailsObjectPage",
                     "target": "AdDetailsObjectPage"
                 },
-                    {
-                        "pattern": "AdDetails({key})/graphicContent({key2}):?query:",
-                        "name": "GraphicContentObjectPage",
-                        "target": "GraphicContentObjectPage"
-                    }
+                {
+                    "pattern": "AdDetails({key})/graphicContent({key2}):?query:",
+                    "name": "GraphicContentObjectPage",
+                    "target": "GraphicContentObjectPage"
+                }
             ],
             "targets": {
                 "AdDetailsList": {
@@ -118,27 +118,26 @@
                         "settings": {
                             "editableHeaderContent": false,
                             "entitySet": "AdDetails",
-                                "navigation": {
-                                    "graphicContent": {
-                                        "detail": {
-                                            "route": "GraphicContentObjectPage"
-                                        }
+                            "navigation": {
+                                "graphicContent": {
+                                    "detail": {
+                                        "route": "GraphicContentObjectPage"
                                     }
                                 }
-                        }
-                    }
-                },
-                    "GraphicContentObjectPage": {
-                        "type": "Component",
-                        "id": "GraphicContentObjectPage",
-                        "name": "sap.fe.templates.ObjectPage",
-                        "options": {
-                            "settings": {
-                                "editableHeaderContent": false,
-                                "entitySet": "GraphicContent"
                             }
                         }
                     }
+                },
+                "GraphicContentObjectPage": {
+                    "type": "Component",
+                    "id": "GraphicContentObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "GraphicContent"
+                        }
+                    }
+                }
             }
         },
         "contentDensities": {

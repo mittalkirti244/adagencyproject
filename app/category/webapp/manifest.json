@@ -101,7 +101,8 @@
                                         "route": "CategoryObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },

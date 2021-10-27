@@ -54,7 +54,7 @@ Facets              : [{
         },
         {
             Value : preferenceCost,
-            Label : '{i18n>Preference Cost}',
+            Label : '{i18n>Cost}',
         },
     ]},
 
@@ -108,8 +108,8 @@ UI : {
        // {Value : ID},
         {Value : contentType},
         {Value : contentSizeLimit},
-        {Value : contentCost},
-        {Value:unitOfMeasurement}
+        //{Value : contentCost},
+       // {Value:unitOfMeasurement}
 
 
     ],
@@ -139,8 +139,8 @@ UI : {
     FieldGroup #General : {Data : [
         {Value : contentType},
         {Value : contentSizeLimit},
-        {Value : contentCost},
-        {Value: unitOfMeasurement}
+     //   {Value : contentCost},
+     //   {Value: unitOfMeasurement}
 
     ]},
     FieldGroup #Details : {Data : [
@@ -172,15 +172,15 @@ annotate AdAgencyServices.ContentDetails with {
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'contentSize'
-                },
-                {
-                    $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'contentCost'
-                },
-                {
-                   $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'unitOfMeasurement' 
                 }
+                // {
+                //     $Type             : 'Common.ValueListParameterDisplayOnly',
+                //     ValueListProperty : 'contentCost'
+                // },
+                // {
+                //    $Type             : 'Common.ValueListParameterDisplayOnly',
+                //     ValueListProperty : 'unitOfMeasurement' 
+                // }
             ]
         }
     });

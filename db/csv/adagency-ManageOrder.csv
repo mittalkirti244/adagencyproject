@@ -1,4 +1,4 @@
-ID,planID,description,address,country,totalAmount
-101,100,Property Sale,Gorakhpur,IN,2000
-102,99,Education,Noida,IN,1500.25
-103,98,Business,Delhi,IN,2500.50
+ID,planID,address,country,totalAmount
+101,100,Gorakhpur,IN,2000
+102,99,Noida,IN,1500.25
+103,98,Delhi,IN,2500.50

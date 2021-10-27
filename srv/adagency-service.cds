@@ -1,5 +1,8 @@
 using adagency from '../db/schema';
+using {AdDetailService as ad}from './adDetail-service';
 using {country as count} from './external/country';
+using {UserProfile as u }from './adagency-userprofile';
+ 
 
 service AdAgencyServices 
  {
@@ -14,8 +17,7 @@ service AdAgencyServices
     @Capabilities: {Insertable:true,Deletable:true,}
     entity PaymentPlanDetails as Projection on adagency.PaymentPlan
     {
-    *,preferences.preferenceType as pType, preferences.preferenceCost as pCost
-    // *,content.ID as Cid, preferences.preferenceType as pType, preferences.preferenceCost as pCost,content.contentType as cType,content.contentSizeLimit as cSize,content.contentCost as cCost
+    *,preferences.preferenceType as pType, preferences.preferenceCost as pCost ,content.ID as Cid,content.contentType as cType,content.contentSizeLimit as cSize
     }
 
     entity Country as projection on count.A_Country
@@ -26,6 +28,13 @@ service AdAgencyServices
     {
         key Country,CountryName,Language
     };
+@readonly
+    entity UserProf as projection on u.User;
+@readonly
+    entity AdDetails as projection on ad.AdDetails
+
+    
+    function getPreferenceId(preferenceType1: String) returns String;
 
  }
      

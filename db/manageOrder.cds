@@ -5,10 +5,10 @@ using {cuid, managed} from '@sap/cds/common';
 entity ManageOrder : cuid, managed {
     key ID          : UUID @odata.Type : 'Edm.String';
         planID      : String;
-        description : LargeString;
+        //description : LargeString;
         address     : LargeString;
         country     : String;
-        totalAmount : Double;
+        totalAmount : String;
         status      : OrderStatus;      
 }
 
