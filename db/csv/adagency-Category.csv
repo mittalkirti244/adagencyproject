@@ -1,3 +1,13 @@
-ID;NAME
-12;MUSIC
-13;SPORTS
+ID;NAME;DESCRIPTION
+1;Property;Buy,Rent,Sell,Lease
+2;Recruitment;Situations,Vacant/Wanted
+3;Business;Proposals,offers
+4;Personal;Message,Greetings
+5;Vechicles;Dealers,Auto Services
+6;To Rent;House & Flat to let
+7;Travel;Holidays,Hotel & resorts
+8;Public Notice;Public Notice
+9;Retail;commerical
+10;Education;Admission,Tuition
+11;Astrology;poojas,palmistry,numeroligy
+12;Obituary;Deatch Anniversaries
