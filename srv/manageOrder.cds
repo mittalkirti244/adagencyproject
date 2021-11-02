@@ -8,6 +8,7 @@ UI:{
     
      SelectionFields: [ID,status],
     LineItem:[
+        
         {
             $Type: 'UI.DataField',
             Value: ID,
@@ -37,11 +38,11 @@ UI:{
             },
 
 
-        {
-            $Type: 'UI.DataField',
-            Value: createdBy, 
-            Label:'{i18n>Customer Name}'
-            },
+        // {
+        //     $Type: 'UI.DataField',
+        //     Value: createdBy, 
+        //     Label:'{i18n>Customer Name}'
+        //     },
           {
             $Type: 'UI.DataField',
             Value: createdAt, 
@@ -80,7 +81,7 @@ UI:{
      
     FieldGroup #Order : { Data :[
 
-        {Value : createdBy},
+       // {Value : createdBy},
         {Value : createdAt}
 
     ]
