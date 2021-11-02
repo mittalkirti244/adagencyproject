@@ -2,8 +2,8 @@ namespace adagency;
 
 entity User {
 
-        //   ID          : UUID @odata.Type : 'Edm.String'  @Core.Computed;
-    key profileId   : String @title : '{i18n>Profile Id}';
+        key profileId          : UUID @odata.Type : 'Edm.String'  @Core.Computed;
+   // key profileId   : String @title : '{i18n>Profile Id}';
         firstName   : String;
         lastName    : String;
         email       : String;

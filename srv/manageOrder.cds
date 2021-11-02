@@ -15,7 +15,7 @@ UI:{
             },
         {
             $Type: 'UI.DataField',
-            Value: planID, 
+            Value: pay_ID, 
             Label:'{i18n>Plan ID}'
             },
     //    {
@@ -37,16 +37,16 @@ UI:{
             },
 
 
-        {
-            $Type: 'UI.DataField',
-            Value: createdBy, 
-            Label:'{i18n>Customer Name}'
-            },
-          {
-            $Type: 'UI.DataField',
-            Value: createdAt, 
-            Label:'{i18n>Order Date}'
-            },
+        // {
+        //     $Type: 'UI.DataField',
+        //     Value: createdBy, 
+        //     Label:'{i18n>Customer Name}'
+        //     },
+        //   {
+        //     $Type: 'UI.DataField',
+        //     Value: createdAt, 
+        //     Label:'{i18n>Order Date}'
+        //     },
 
        {
            $Type: 'UI.DataField',
@@ -63,7 +63,7 @@ UI:{
     HeaderInfo:{
         TypeName: '{i18n>ManageOrder}',
         TypeNamePlural: '{i18n>Manage Order}',
-        Title: {Value: ID},
+        Title: {Label:'Order ID', Value: ID},
         //Description: {Value: title}
         
     },
@@ -80,8 +80,8 @@ UI:{
      
     FieldGroup #Order : { Data :[
 
-        {Value : createdBy},
-        {Value : createdAt}
+        // {Value : createdBy},
+        // {Value : createdAt}
 
     ]
         },
@@ -92,7 +92,9 @@ UI:{
         ],
          FieldGroup#Details: {
             Data: [
-                {Value: planID,Label:'{i18n>Plan ID}'},
+                {Value :user1_profileId, Label: 'User'},
+                {Value:ad1_ID, Label:'User Ads'},
+               // {Value: payID,Label:'{i18n>Plan ID}'},
                // {Value: description,Label:'{i18n>Description}'},
                 {Value: address,Label:'{i18n>Address}'},
                 {Value: country,Label:'{i18n>Country}'},
@@ -143,10 +145,10 @@ planID @(Common : {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'adId'
                 },
-                {
-                    $Type             : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'pCost'
-                }
+                // {
+                //     $Type             : 'Common.ValueListParameterDisplayOnly',
+                //     ValueListProperty : 'pCost'
+                // }
             ]
         },
     })
@@ -163,7 +165,7 @@ totalAmount @(Common : {
                 {
                     $Type             : 'Common.ValueListParameterInOut',
                     LocalDataProperty : 'totalAmount',
-                    ValueListProperty : 'pCost'
+                    ValueListProperty : 'totalCost'
                 },
                  {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
@@ -199,4 +201,5 @@ country @(Common : {
         },
     })
 };
+
 

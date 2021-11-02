@@ -12,16 +12,16 @@ annotate AdAgencyServices.PaymentPlanDetails with @(
 UI : {
     SelectionFields     : [preferences_ID],
     LineItem            : [
-      //  {Value: cType},
-       {
+        //  {Value: cType},
+        {
             Value : content_contentType,
             Label : '{i18n>Content}'
         },
-        {Value: cSize},
-      //  {Value: content.unitOfMeasurement,Label:'Measurement Unit'},
-       // {Value: cCost},
-        {Value : pType},
-        {Value : pCost},
+        {Value : content.contentSizeLimit},
+        //  {Value: content.unitOfMeasurement,Label:'Measurement Unit'},
+        // {Value: cCost},
+        {Value : preferences.preferenceType},
+        {Value : preferences.preferenceCost},
         {Value : startDate},
         {Value : endDate},
 
@@ -61,13 +61,17 @@ UI : {
             Label : '{i18n>Contents}'
         },
         {Value : endDate},
-        // {
-        //     Value : userID,
-        //     Label : '{i18n>User Id}'
-        // },
+        {
+            Value : userID,
+            Label : '{i18n>Select User}'
+        },
         {
             Value : adId,
-            Label : '{i18n>User and Ad}'
+            Label : '{i18n>Select User Ad}'
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : totalCost
         }
 
 
@@ -78,14 +82,11 @@ UI : {
     //     Label : 'Column label'
     // },
     ]},
-
-
-},
-
+}
 );
 
-annotate AdAgencyServices.PaymentPlanDetails{
-    preferences_ID  @title:'{i18n>Preferences Id}'
+annotate AdAgencyServices.PaymentPlanDetails {
+    preferences_ID @title : '{i18n>Preferences Id}'
 }
 
 annotate AdAgencyServices.PaymentPlanDetails with {
@@ -110,10 +111,10 @@ annotate AdAgencyServices.PaymentPlanDetails with {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'contentSizeLimit'
                 }
-                // {
-                //     $Type             : 'Common.ValueListParameterDisplayOnly',
-                //     ValueListProperty : 'contentCost'
-                // },
+            // {
+            //     $Type             : 'Common.ValueListParameterDisplayOnly',
+            //     ValueListProperty : 'contentCost'
+            // },
             ]
         }
     });
@@ -181,38 +182,54 @@ annotate AdAgencyServices.PaymentPlanDetails with {
     });
 }
 
-// annotate AdAgencyServices.PaymentPlanDetails with {
-//     userID @(Common : {
-//         FieldControl : #Mandatory,
-//         ValueList    : {
-//             CollectionPath  : 'UserProf',
-//             Label           : 'User profile',
-//             SearchSupported : true,
-//             Parameters      : [{
-//                 $Type             : 'Common.ValueListParameterInOut',
-//                 LocalDataProperty : 'userID',
-//                 ValueListProperty : 'ID'
-//             }]
-//         }
-//     });
-// }
+annotate AdAgencyServices.PaymentPlanDetails with {
+    userID @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'UserProf',
+            Label           : 'User profile',
+           // FetchValues : 2,
+            SearchSupported : true,
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'userID',
+                    ValueListProperty : 'profileId'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'email'
+                }
+            ]
+        }
+    });
+}
 
 annotate AdAgencyServices.PaymentPlanDetails with {
     adId @(Common : {
         FieldControl : #Mandatory,
+
         ValueList    : {
-            CollectionPath  : 'AdDetails',
+           CollectionPath  : 'AdDetails',
             Label           : 'Ad Id',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'adId',
-                ValueListProperty : 'ID'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'userID'
-            }
+            // DistinctValuesSupported :HasActiveEntity,
+            // PresentationVariantQualifier : 'userID',
+            // SelectionVariantQualifier : 'userID',
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'adId',
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterFilterOnly',
+                    ValueListProperty : 'userID',
+                }
             ]
         }
     });

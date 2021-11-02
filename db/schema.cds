@@ -5,7 +5,7 @@ entity Preferences:cuid
 {
 key ID: UUID  @odata.Type:'Edm.String' @title : '{i18n>Preference Id}' @Core.Computed;
 preferenceType:String @title : '{i18n>Preference Type}'; 
-preferenceCost:String  @title : '{i18n>Cost}';
+preferenceCost:Integer  @title : '{i18n>Cost}';
 desc: String
 }
 
@@ -14,7 +14,7 @@ entity ContentDetails:cuid
  ID: UUID  @odata.Type:'Edm.String' @title : '{i18n>Content Id}' @Core.Computed;
 key contentType:String @title : '{i18n>Content Type}';
 contentSizeLimit: Integer @title : '{i18n>Content Size Limit}';
-//contentCost: Double@title : '{i18n>Content Cost(in Rs)}';
+contentCost: Integer@title : '{i18n>Content Cost(in Rs)}';
 desc: String;
 unitOfMeasurement:String@title : '{i18n>Measurement Unit}'
 
@@ -24,8 +24,9 @@ entity PaymentPlan:cuid
 {
 key ID:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
   content: association to ContentDetails;
-  //userID: String;
+  userID: String;
   adId: String;
+  totalCost:Decimal(9,2);
   //content:String  @title : '{i18n>Contents}';
    preferences: association to Preferences;
    startDate: Date @title : '{i18n>Start Date}';
@@ -33,3 +34,5 @@ key ID:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
    Country : Country;
 
 }
+
+

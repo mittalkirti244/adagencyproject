@@ -1,0 +1,23 @@
+{
+
+    "welcomeFile": "profile/webapp/",
+
+    "authenticationMethod": "none",
+
+    "routes": [{
+
+        "source": "^/profile/webapp/(.*)$",
+
+        "target": "$1",
+
+        "localDir": "profile/webapp/"
+
+    }, {
+
+        "source": "^(.*)$",
+
+        "destination": "srv-api"
+
+    }]
+
+}

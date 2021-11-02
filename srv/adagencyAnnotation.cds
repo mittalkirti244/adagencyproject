@@ -98,7 +98,7 @@ annotate AdAgencyServices.preferences with {
 }
 
 //##########################################Content#############################################
-annotate AdAgencyServices.contentDetails with @odata.draft.enabled;
+//annotate AdAgencyServices.contentDetails with @odata.draft.enabled;
 
 annotate AdAgencyServices.contentDetails with @(
 

@@ -65,7 +65,9 @@ annotate AdDetailService.AdDetails with @(UI : {
             Label : 'File Name'
         }
     ]}
-}, );
+},
+
+ );
 
 annotate AdDetailService.AdDetails with {
     @UI.MultiLineText
@@ -83,7 +85,7 @@ annotate AdDetailService.AdDetails with {
     title        @title : '{i18n>Ad Title}';
     categoryName @title : '{i18n>Category Name}';
     textContent  @title : '{i18n>Text Content}';
-    userID       @title : '{i18n>User ID}';
+    userID       @title : '{i18n>User ID}' @Consumption.filter.defaultValue ;
     adCountry    @title : '{i18n>Country}';
 }
 
@@ -116,15 +118,20 @@ annotate AdDetailService.AdDetails with {
             CollectionPath  : 'UserProf',
             Label           : 'User profile',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'userID',
-                ValueListProperty : 'profileId'
-            },
-            {
-                $Type: 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'firstName',
-            }
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'userID',
+                    ValueListProperty : 'profileId'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'email'
+                }
             ]
         }
     });
@@ -132,7 +139,7 @@ annotate AdDetailService.AdDetails with {
 
 annotate AdDetailService.AdDetails with {
     adCountry @(Common : {
-        FieldControl : #Mandatory,
+       // FieldControl : #Mandatory,
         ValueList    : {
             CollectionPath  : 'CountryText',
             Label           : 'Country Text',
