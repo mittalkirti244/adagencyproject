@@ -1,16 +1,16 @@
 {
 
-    "welcomeFile": "profile/webapp/",
+    "welcomeFile": "launchpad",
 
     "authenticationMethod": "none",
 
     "routes": [{
 
-        "source": "^/profile/webapp/(.*)$",
+        "source": "^/launchpad/(.*)$",
 
         "target": "$1",
 
-        "localDir": "profile/webapp/"
+        "localDir": "launchpad"
 
     }, {
 

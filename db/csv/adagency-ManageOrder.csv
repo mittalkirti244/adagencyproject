@@ -1,4 +1,4 @@
-ID,address,country,totalAmount,user1_profileId,ad1_ID,pay_ID
+ID,address,country,totalAmount,userID,adID,planID
 101,Gorakhpur,IN,2000,5169,1,12
 102,Noida,IN,1500,5167,2,13
-103,Delhi,IN,2500,2134,3,13
+103,Delhi,IN,2500,5167,3,

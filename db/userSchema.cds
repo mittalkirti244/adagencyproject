@@ -7,7 +7,7 @@ entity User {
         firstName   : String;
         lastName    : String;
         email       : String;
-        gender      : Gender;
+        gender      : Association to Gender;
         phoneNumber : String;
         password    : String;
         street      : String;
@@ -17,17 +17,24 @@ entity User {
 
 }
 
-type Gender : String(1) enum {
+// type GenderID: String enum {
+// male         = 'M';
+// female       = 'F';
+// nonBinary    = 'N';
+// };
+
+// entity Gender {
+//     key ID: GenderID;
+// }
+
+
+entity Gender {
+  //  key ID : Integer;
+    key Type   : String(1) enum {
     male         = 'M';
     female       = 'F';
     nonBinary    = 'N';
     noDisclosure = 'D';
     selfDescribe = 'S';
 }
-
-
-annotate Gender with @(
-    title       : '{i18n>gender}',
-    description : '{i18n>gender}',
-    assert.enum
-);
+}

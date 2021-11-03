@@ -26,7 +26,7 @@ key ID:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
   content: association to ContentDetails;
   userID: String;
   adId: String;
-  totalCost:Decimal(9,2);
+  totalCost:Integer;
   //content:String  @title : '{i18n>Contents}';
    preferences: association to Preferences;
    startDate: Date @title : '{i18n>Start Date}';

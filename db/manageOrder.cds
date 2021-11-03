@@ -11,15 +11,14 @@ using from './userSchema';
 
 entity ManageOrder : cuid {
     key ID          : UUID @odata.Type : 'Edm.String';
-        //  planID      : String;
+        userID      : String;
+        adID        : String;
+        planID      : String;
         //description : LargeString;
         address     : LargeString;
         country     : String;
         totalAmount : Integer;
         status      : OrderStatus;
-        user1        : Association to adagency.User;
-        ad1         : Association to adagency.AdDetails;
-        pay         : Association to adagency.PaymentPlan;
 }
 
 type OrderStatus : String enum {

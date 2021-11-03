@@ -20,15 +20,16 @@ service AdAgencyServices {
         Insertable : true,
         Deletable  : true,
     }
-    // entity PaymentPlanDetails as projection on adagency.PaymentPlan {
+     entity PaymentPlanDetails as projection on adagency.PaymentPlan;
+     // {
     //     * , preferences.preferenceType as pType, preferences.preferenceCost as pCost, content.ID as Cid, content.contentType as cType, content.contentSizeLimit as cSize
     // }
 
-    entity PaymentPlanDetails as
-        select from adagency.PaymentPlan {
-            *,
-            preferences.preferenceCost + content.contentCost as totalCost : Decimal(9, 2)
-        };
+    // entity PaymentPlanDetails as
+    //     select from adagency.PaymentPlan {
+    //         *,
+    //         preferences.preferenceCost + content.contentCost as totalCost : Decimal(9, 2)
+    //     };
 
     // extend PaymentPlanDetails {
     //     add : Association to one ad.AdDetails;

@@ -1,8 +1,8 @@
 using adagency as ad from '../db/manageOrder';
-using from '../db/data-model';
+using from '../db/schema';
 using {country as cntry} from './external/country';
 using {AdAgencyServices as ads} from './adagency-service';
-using {adagency as cad} from '../db/schema';
+using {AdDetailService as ad1} from './adDetail-service';
 
 service ManageOrdersService {
 
@@ -10,38 +10,51 @@ service ManageOrdersService {
         Insertable : true,
         Deletable  : true
     }
-    entity ManageOrder as projection on ad.ManageOrder;
+    entity ManageOrder    as projection on ad.ManageOrder;
     // {
     //     *,pay.content.contentCost as contentCost, pay.preferences.preferenceCost
-    // }; 
+    // };
     // extend ManageOrder with {
     //     PaymentPlanDetails : Association to ads.PaymentPlanDetails;
     // }
 
-    // extend entity ManageOrder as
-    //     select from ads.PaymentPlanDetails as projection {
-    //         *,
-    //         ad.preferences.preferenceCost + ad.content.contentCost as totalAmount : Decimal(9, 2)
+    //     extend projection ManageOrder with {
+    //         //preferences.preferenceCost + content.contentCost as totalCost : Decimal(9, 2)
+
+    // };
+
+    // entity ManageOrder1   as
+    //     select from PlanDetails {
+    //         preferences.preferenceCost + content.contentCost as totalAmount : Integer
     //     };
 
+    @readonly
+    entity PlanDetails    as projection on ads.PaymentPlanDetails{
+        *, preferences.preferenceCost + content.contentCost as totalAmount : Integer
+    };
 
     @readonly
-    entity planDetails as projection on ads.PaymentPlanDetails;
+    entity ContentDetails as projection on ads.contentDetails;
 
-    entity userDetails as projection on ad.User;
-    
-
-    @readonly
-    entity StatusCode  as projection on ad.MyOrderStatus;
-
+    // @readonly
+    // entity PreferencesDetails as projection on ads.preferences;
 
     @readonly
-    entity Country     as projection on cntry.A_Country {
+    entity UserDetails    as projection on ad.User;
+
+    @readonly
+    entity AdDetails      as projection on ad1.AdDetails;
+
+    @readonly
+    entity StatusCode     as projection on ad.MyOrderStatus;
+
+    @readonly
+    entity Country        as projection on cntry.A_Country {
         key Country, CountryCurrency, CountryThreeDigitISOCode, CountryThreeLetterISOCode, IndexBasedCurrency
     };
 
     @readonly
-    entity CountryText as projection on cntry.A_CountryText {
+    entity CountryText    as projection on cntry.A_CountryText {
         key Country, CountryName, Language
     };
 }

@@ -1,5 +1,5 @@
 {
-    "name": "ad-agency-ui",
+    "name": "ad-agency-ui1",
     "dependencies": {
         "@sap/approuter": "^6.6.0"
     },

@@ -62,11 +62,7 @@
                 }
             },
             "db": {
-                "kind": "sqlite",
-                "model": "*",
-                "[production]": {
-                    "kind": "hana"
-                },
+                "kind": "sql",
                 "credentials": {
                     "database": "adproj.db"
                 }
