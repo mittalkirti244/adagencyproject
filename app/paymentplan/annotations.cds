@@ -1,1 +1,1 @@
-using AdAgencyServices as service from 'adagencyproject../../../home/user/projects/adagencyproject/srv/adagency-service';
+using AdAgencyServices as service from '../../srv/adagency-service';
