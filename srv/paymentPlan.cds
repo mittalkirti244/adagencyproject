@@ -46,9 +46,18 @@ UI : {
     ],
     FieldGroup #General : {Data : [
         //{Value: ID, Label:'{i18n>Book ID}'},
+
+                {
+            Value : adId,
+            Label : '{i18n>Ad Id}'
+        },
         {
             Value : preferences_ID,
             Label : '{i18n>Preferences}'
+        },
+                {
+            Value : content_contentType,
+            Label : '{i18n>Contents}'
         },
         // {Value: content_contentType,Label:'{i18n>Contents}'},
 
@@ -56,19 +65,13 @@ UI : {
         //{Value:cSize},
         // {Value:cCost},
         {Value : startDate},
-        {
-            Value : content_contentType,
-            Label : '{i18n>Contents}'
-        },
+
         {Value : endDate},
         // {
         //     Value : userID,
         //     Label : '{i18n>User Id}'
         // },
-        {
-            Value : adId,
-            Label : '{i18n>User and Ad}'
-        }
+
 
 
     //                         {

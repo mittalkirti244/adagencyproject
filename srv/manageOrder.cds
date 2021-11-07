@@ -37,11 +37,11 @@ UI:{
             },
 
 
-        {
-            $Type: 'UI.DataField',
-            Value: createdBy, 
-            Label:'{i18n>Customer Name}'
-            },
+        // {
+        //     $Type: 'UI.DataField',
+        //     Value: createdBy, 
+        //     Label:'{i18n>Customer Name}'
+        //     },
           {
             $Type: 'UI.DataField',
             Value: createdAt, 
@@ -80,7 +80,7 @@ UI:{
      
     FieldGroup #Order : { Data :[
 
-        {Value : createdBy},
+       // {Value : createdBy},
         {Value : createdAt}
 
     ]

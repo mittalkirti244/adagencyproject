@@ -23,7 +23,9 @@
     "watch-project1": "cds watch --open project1/webapp/index.html#fe-lrop-v4",
     "watch-profile": "cds watch --open profile/webapp/index.html#fe-lrop-v4",
     "undeploy": "cf undeploy adagencyproject --delete-services --delete-service-keys",
-    "watch-main": "cds watch --open main/webapp/index.html#fe-lrop-v4"
+    "watch-main": "cds watch --open main/webapp/index.html#fe-lrop-v4",
+    "watch-preferences": "cds watch --open preferences/webapp/index.html#fe-lrop-v4",
+    "watch-paymentplan": "cds watch --open paymentplan/webapp/index.html#fe-lrop-v4"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -78,6 +80,8 @@
     "app/paymentplan",
     "app/manageorder",
     "app/profile",
-    "app/main"
+    "app/main",
+    "app/preferences",
+    "app/paymentplan"
   ]
 }
