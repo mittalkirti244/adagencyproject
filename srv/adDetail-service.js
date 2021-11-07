@@ -13,15 +13,15 @@ module.exports = cds.service.impl(async function () {
         return service.tx(request).run(request.query);
     });
 
-    this.before('NEW', 'AdDetails', genid)
+    //this.before('NEW', 'AdDetails', genid)
 
     // srv.on('READ','AdDetails', ()=> SELECT.from(AdDetails));
 });
 
-/** Generate primary keys for target entity in request */
-async function genid(req) {
-    const { ID } = await cds.tx(req).run(SELECT.one.from(req.target).columns('max(ID) as ID'))
-    req.data.ID = ID  
-    req.data.ID++  
-}
+// /** Generate primary keys for target entity in request */
+// async function genid(req) {
+//     const { ID } = await cds.tx(req).run(SELECT.one.from(req.target).columns('max(ID) as ID'))
+//     req.data.ID = ID  
+//     req.data.ID++  
+// }
 

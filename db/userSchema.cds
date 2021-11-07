@@ -23,18 +23,18 @@ entity User {
 // nonBinary    = 'N';
 // };
 
-// entity Gender {
-//     key ID: GenderID;
-// }
-
-
 entity Gender {
-  //  key ID : Integer;
-    key Type   : String(1) enum {
-    male         = 'M';
-    female       = 'F';
-    nonBinary    = 'N';
-    noDisclosure = 'D';
-    selfDescribe = 'S';
+    key code: String;
 }
-}
+
+
+// entity Gender {
+//   //  key ID : Integer;
+//     key Type   : String(1) enum {
+//     male         = 'M';
+//     female       = 'F';
+//     nonBinary    = 'N';
+//     noDisclosure = 'D';
+//     selfDescribe = 'S';
+// }
+// }

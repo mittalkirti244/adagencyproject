@@ -18,13 +18,13 @@ entity ManageOrder : cuid {
         address     : LargeString;
         country     : String;
         totalAmount : Integer;
-        status      : OrderStatus;
+        status      : Association to MyOrderStatus;
 }
 
-type OrderStatus : String enum {
-    Confirmed;
-    Pending;
-}
+// type OrderStatus : String enum {
+//     Confirmed;
+//     Pending;
+// }
 
 entity MyOrderStatus {
     key code : String;

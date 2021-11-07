@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "@sap/hdi-deploy": "^4.2.0",
-        "@sap/ux-specification": "^1.90.12",
+        "@sap/ux-specification": "^1.90.13",
         "sqlite3": "^5.0.2"
     },
     "engines": {
@@ -79,7 +79,6 @@
         "app/contentdetails",
         "app/paymentplan",
         "app/manageorder",
-        "app/profile",
-        "app/main"
+        "app/profile"
     ]
 }

@@ -14,14 +14,22 @@ UI : {
     LineItem            : [
         //  {Value: cType},
         {
+            Value: userID,
+            Label: 'User ID'
+        },
+        {
+            Value: adId,
+            Label:'Ad ID'
+        },
+        {
             Value : content_contentType,
             Label : '{i18n>Content}'
         },
         {Value : content.contentSizeLimit},
         //  {Value: content.unitOfMeasurement,Label:'Measurement Unit'},
-        // {Value: cCost},
+        {Value: content.contentCost, Label: 'Content Cost'},
         {Value : preferences.preferenceType},
-        {Value : preferences.preferenceCost},
+        {Value : preferences.preferenceCost, Label: 'Preference Cost'},
         {Value : startDate},
         {Value : endDate},
 
@@ -63,10 +71,10 @@ UI : {
         },
         {Value : startDate},
         {Value : endDate},
-        {
-            $Type : 'UI.DataField',
-            Value : totalCost
-        }
+        // {
+        //     $Type : 'UI.DataField',
+        //     Value : totalCost
+        // }
 
 
     //                         {
@@ -99,6 +107,10 @@ annotate AdAgencyServices.PaymentPlanDetails with {
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'contentSizeLimit'
+                },
+                {
+                     $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'contentCost'
                 }
             ]
         }

@@ -1,4 +1,4 @@
-using adagency as ad from '../db/manageOrder';
+using {adagency as ad} from '../db/manageOrder';
 using from '../db/schema';
 using {country as cntry} from './external/country';
 using {AdAgencyServices as ads} from './adagency-service';
@@ -11,22 +11,6 @@ service ManageOrdersService {
         Deletable  : true
     }
     entity ManageOrder    as projection on ad.ManageOrder;
-    // {
-    //     *,pay.content.contentCost as contentCost, pay.preferences.preferenceCost
-    // };
-    // extend ManageOrder with {
-    //     PaymentPlanDetails : Association to ads.PaymentPlanDetails;
-    // }
-
-    //     extend projection ManageOrder with {
-    //         //preferences.preferenceCost + content.contentCost as totalCost : Decimal(9, 2)
-
-    // };
-
-    // entity ManageOrder1   as
-    //     select from PlanDetails {
-    //         preferences.preferenceCost + content.contentCost as totalAmount : Integer
-    //     };
 
     @readonly
     entity PlanDetails    as projection on ads.PaymentPlanDetails{

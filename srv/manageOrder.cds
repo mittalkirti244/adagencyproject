@@ -9,7 +9,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
     Identification      : [{Value : ID}],
     SelectionFields     : [
         ID,
-        status
+        status_code
     ],
     LineItem            : [
         {
@@ -41,7 +41,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
         },
         {
             $Type : 'UI.DataField',
-            Value : status,
+            Value : status_code,
             Label : '{i18n>Status}'
         }
 
@@ -104,7 +104,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
             Label : '{i18n>Total Amount}'
         },
         {
-            Value : status,
+            Value : status_code,
             Label : '{i18n>Status}',
         }
     ]},
@@ -124,7 +124,7 @@ annotate ManageOrdersService.ManageOrder with {
             CollectionPath : 'StatusCode',
             Parameters     : [{
                 $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'status',
+                LocalDataProperty : 'status_code',
                 ValueListProperty : 'code'
             }, ]
         },
@@ -205,11 +205,7 @@ annotate ManageOrdersService.ManageOrder with {
                 $Type             : 'Common.ValueListParameterInOut',
                 LocalDataProperty : 'planID',
                 ValueListProperty : 'ID'
-            },
-        // {
-        //     $Type             : 'Common.ValueListParameterDisplayOnly',
-        //     ValueListProperty : 'adId'
-        // }
+            }
         ]
     }, })
 };
@@ -231,11 +227,7 @@ annotate ManageOrdersService.ManageOrder with {
                 $Type             : 'Common.ValueListParameterInOut',
                 LocalDataProperty : 'totalAmount',
                 ValueListProperty : 'totalAmount'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'ID'
-            },
+            }
         ]
     }, })
 };

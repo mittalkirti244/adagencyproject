@@ -4,7 +4,44 @@ using from './adagency-userprofile';
 annotate UserProfile.User with @odata.draft.enabled;
 
 annotate UserProfile.User with @(UI : {
+    SelectionFields     : [
+        profileId,
+        email
+    ],
     LineItem            : [
+        // {
+        //     $Type: 'UI.DataFieldForIntentBasedNavigation',
+        //     SemanticObject : 'AdDetailsCategoryPage',
+        //     Action : 'abc',
+        //     NavigationAvailable,
+        //     RequiresContext : true,
+        //     // Mapping : [
+        //     //     {
+        //     //         $Type : 'Common.SemanticObjectMappingType',
+        //     //         LocalProperty : profileId,
+        //     //         SemanticObjectProperty : '',
+        //     //     },
+        //     //],
+        //     Label : 'Select Ads',
+        // },
+        // {
+        //     $Type : 'UI.DataFieldWithIntentBasedNavigation',
+        //     SemanticObject : 'we',
+        //     Action : 'erf',
+        //     // Mapping : [
+        //     //     {
+        //     //         $Type : 'Common.SemanticObjectMappingType',
+        //     //         LocalProperty : ,
+        //     //         SemanticObjectProperty : '',
+        //     //     },
+        //     // ],
+        //     Value : profileId,
+        //     Label : 'Ad'
+        // },
+        {
+            $Type : 'UI.DataField',
+            Value : profileId
+        },
         {
             $Type : 'UI.DataField',
             Value : firstName
@@ -22,10 +59,10 @@ annotate UserProfile.User with @(UI : {
             $Type : 'UI.DataField',
             Value : phoneNumber
         },
-        // {
-        //     $Type : 'UI.DataField',
-        //     Value :  gender
-        // },
+        {
+            $Type : 'UI.DataField',
+            Value : gender_code
+        },
         {
             $Type : 'UI.DataField',
             Value : street,
@@ -66,7 +103,7 @@ annotate UserProfile.User with @(UI : {
     FieldGroup #General : {Data : [
         {Value : firstName},
         {Value : lastName},
-      //  {Value : gender_Type},
+        {Value : gender_code},
         {Value : email},
         {Value : phoneNumber},
         {Value : password},
@@ -99,33 +136,33 @@ annotate UserProfile.User with {
 };
 
 annotate UserProfile.User with {
-    ID              @title : '{i18n>User ID}';
-    firstName       @title : '{i18n>First Name}';
-    lastName        @title : '{i18n>Last Name}';
-    gender          @title : '{i18n>Gender}';
-    email           @title : '{i18n>Email}';
-    phoneNumber     @title : '{i18n>Phone Number}';
-    password        @title : '{i18n>Password}';
-    street  @title : '{i18n>Street}';
-    city    @title : '{i18n>City}';
-    state   @title : '{i18n>State}';
-    pinCode @title : '{i18n>Pincode}';
+    profileId   @title : '{i18n>User ID}';
+    firstName   @title : '{i18n>First Name}';
+    lastName    @title : '{i18n>Last Name}';
+    gender      @title : '{i18n>Gender}';
+    email       @title : '{i18n>Email}';
+    phoneNumber @title : '{i18n>Phone Number}';
+    password    @title : '{i18n>Password}';
+    street      @title : '{i18n>Street}';
+    city        @title : '{i18n>City}';
+    state       @title : '{i18n>State}';
+    pinCode     @title : '{i18n>Pincode}';
 
 
 }
 
-// annotate UserProfile.User with {
-//      gender @(Common : {
-//         //FieldControl : #Mandatory,
-//         ValueListWithFixedValues,
-//         ValueList    : {
-//             CollectionPath : 'Gender',
-//             Label          : 'User Gender',
-//             Parameters     : [{
-//                 $Type             : 'Common.ValueListParameterInOut',
-//                 LocalDataProperty : 'gender_Type',
-//                 ValueListProperty : 'Type'
-//             }]
-//         }
-//     });
-// }
+annotate UserProfile.User with {
+    gender @(Common : {
+        //FieldControl : #Mandatory,
+        ValueListWithFixedValues,
+        ValueList : {
+            CollectionPath : 'Gender',
+            Label          : 'User Gender',
+            Parameters     : [{
+                $Type             : 'Common.ValueListParameterInOut',
+                LocalDataProperty : 'gender_code',
+                ValueListProperty : 'code'
+            }]
+        }
+    });
+}
