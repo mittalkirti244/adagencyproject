@@ -1,0 +1,52 @@
+{
+    "welcomeFile": "app/launchpad.html",
+    "authenticationMethod": "none",
+    "routes": [
+         {
+            "source": "^/app/(.*)$",
+            "cacheControl": "no-cache, no-store, must-revalidate",
+            "target": "$1",
+            "localDir": "./"
+
+        },
+        {
+            "source": "^/category/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "category/webapp/"
+        },
+        {
+            "source": "^/contentdetails/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "contentdetails/webapp/"
+        },
+        {
+            "source": "^/manageorder/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "manageorder/webapp/"
+        },
+        {
+            "source": "^/paymentplan/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "paymentplan/webapp/"
+        },
+        {
+            "source": "^/prefrences/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "prefrences/webapp/"
+        },
+        {
+            "source": "^/profile/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "profile/webapp/"
+        },
+        {
+            "source": "^/project1/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "project1/webapp/"
+        },
+        {
+            "source": "^(.*)$",
+            "destination": "srv-api"
+        }
+    ]
+}

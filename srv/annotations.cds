@@ -1,6 +1,5 @@
 using from './adDetail-service';
 using from './adagency-userprofile';
-
 using from '@sap/cds/common';
 
 annotate AdDetailService.AdDetails with @odata.draft.enabled;
@@ -35,7 +34,7 @@ annotate AdDetailService.AdDetails with @(UI : {
         {
             $Type : 'UI.DataField',
             Value : adCountry,
-            Label : 'Ad Country'
+            Label : 'Country'
         },
     ],
 
@@ -56,14 +55,19 @@ annotate AdDetailService.AdDetails with @(UI : {
         {Value : userID},
         {Value : title},
         {Value : textContent},
-        {Value : category_ID,Label:'Category'},
+        {
+            Value : category_ID,
+            Label : 'Category'
+        },
         {Value : adCountry},
         {
             Value : image,
             Label : 'File Name'
         }
     ]}
-}, );
+},
+
+ );
 
 annotate AdDetailService.AdDetails with {
     @UI.MultiLineText
@@ -80,8 +84,8 @@ annotate AdDetailService.AdDetails with {
     ID           @title : '{i18n>Ad ID}';
     title        @title : '{i18n>Ad Title}';
     categoryName @title : '{i18n>Category Name}';
-    textContent  @title : '{i18n> Text Content}';
-    userID       @title : '{i18n> User ID}';
+    textContent  @title : '{i18n>Text Content}';
+    userID       @title : '{i18n>User ID}' @Consumption.filter.defaultValue ;
     adCountry    @title : '{i18n>Country}';
 }
 
@@ -92,35 +96,20 @@ annotate AdDetailService.AdDetails with {
             CollectionPath  : 'Category',
             Label           : 'Category',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'category_ID',
-                ValueListProperty : 'ID'
-            },
-             {
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'category_ID',
+                    ValueListProperty : 'ID'
+                },
+                {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'name'
-                }, 
+                },
             ]
         }
     });
 }
-
-// annotate AdDetailService.AdDetails with {
-//     category_ID @(Common : {
-//         FieldControl : #Mandatory,
-//         ValueList    : {
-//             CollectionPath  : 'Category',
-//             Label           : 'Category',
-//             SearchSupported : true,
-//             Parameters      : [{
-//                 $Type             : 'Common.ValueListParameterInOut',
-//                 LocalDataProperty : 'category_ID',
-//                 ValueListProperty : 'ID'
-//             }]
-//         }
-//     });
-// }
 
 annotate AdDetailService.AdDetails with {
     userID @(Common : {
@@ -129,18 +118,28 @@ annotate AdDetailService.AdDetails with {
             CollectionPath  : 'UserProf',
             Label           : 'User profile',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'userID',
-                ValueListProperty : 'profileId'
-            }]
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'userID',
+                    ValueListProperty : 'profileId'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'email'
+                }
+            ]
         }
     });
 }
 
 annotate AdDetailService.AdDetails with {
     adCountry @(Common : {
-        FieldControl : #Mandatory,
+       // FieldControl : #Mandatory,
         ValueList    : {
             CollectionPath  : 'CountryText',
             Label           : 'Country Text',
@@ -163,23 +162,6 @@ annotate AdDetailService.AdDetails with {
         }
     });
 }
-
-// annotate AdDetailService.AdDetails with {
-//     userID @(Common : {
-//         FieldControl : #Mandatory,
-//         ValueList    : {
-//             CollectionPath  : 'UserProf',
-//             Label           : 'User profile',
-//             SearchSupported : true,
-//             Parameters      : [{
-//                 $Type             : 'Common.ValueListParameterInOut',
-//                 LocalDataProperty : 'userID',
-//                 ValueListProperty : 'ID'
-//             }]
-//         }
-//     });
-// }
-
 
 // annotate AdDetailService.Category with {
 //     ID   @title : '{i18n>Category ID}';

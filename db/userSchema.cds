@@ -2,12 +2,12 @@ namespace adagency;
 
 entity User {
 
-        //   ID          : UUID @odata.Type : 'Edm.String'  @Core.Computed;
-    key profileId   : String @title : '{i18n>Profile Id}';
+        key profileId          : UUID @odata.Type : 'Edm.String'  @Core.Computed;
+   // key profileId   : String @title : '{i18n>Profile Id}';
         firstName   : String;
         lastName    : String;
         email       : String;
-        gender      : Gender;
+        gender      : Association to Gender;
         phoneNumber : String;
         password    : String;
         street      : String;
@@ -17,17 +17,24 @@ entity User {
 
 }
 
-type Gender : String(1) enum {
-    male         = 'M';
-    female       = 'F';
-    nonBinary    = 'N';
-    noDisclosure = 'D';
-    selfDescribe = 'S';
+// type GenderID: String enum {
+// male         = 'M';
+// female       = 'F';
+// nonBinary    = 'N';
+// };
+
+entity Gender {
+    key code: String;
 }
 
 
-annotate Gender with @(
-    title       : '{i18n>gender}',
-    description : '{i18n>gender}',
-    assert.enum
-);
+// entity Gender {
+//   //  key ID : Integer;
+//     key Type   : String(1) enum {
+//     male         = 'M';
+//     female       = 'F';
+//     nonBinary    = 'N';
+//     noDisclosure = 'D';
+//     selfDescribe = 'S';
+// }
+// }

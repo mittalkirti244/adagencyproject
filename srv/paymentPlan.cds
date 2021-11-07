@@ -12,16 +12,24 @@ annotate AdAgencyServices.PaymentPlanDetails with @(
 UI : {
     SelectionFields     : [preferences_ID],
     LineItem            : [
-      //  {Value: cType},
-       {
+        //  {Value: cType},
+        {
+            Value: userID,
+            Label: 'User ID'
+        },
+        {
+            Value: adId,
+            Label:'Ad ID'
+        },
+        {
             Value : content_contentType,
             Label : '{i18n>Content}'
         },
-        {Value: cSize},
-      //  {Value: content.unitOfMeasurement,Label:'Measurement Unit'},
-       // {Value: cCost},
-        {Value : pType},
-        {Value : pCost},
+        {Value : content.contentSizeLimit},
+        //  {Value: content.unitOfMeasurement,Label:'Measurement Unit'},
+        {Value: content.contentCost, Label: 'Content Cost'},
+        {Value : preferences.preferenceType},
+        {Value : preferences.preferenceCost, Label: 'Preference Cost'},
         {Value : startDate},
         {Value : endDate},
 
@@ -45,16 +53,27 @@ UI : {
 
     ],
     FieldGroup #General : {Data : [
+<<<<<<< HEAD
         //{Value: ID, Label:'{i18n>Book ID}'},
 
                 {
             Value : adId,
             Label : '{i18n>Ad Id}'
+=======
+        {
+            Value : userID,
+            Label : '{i18n>Select User}'
+        },
+        {
+            Value : adId,
+            Label : '{i18n>Select User Ad}'
+>>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
         },
         {
             Value : preferences_ID,
             Label : '{i18n>Preferences}'
         },
+<<<<<<< HEAD
                 {
             Value : content_contentType,
             Label : '{i18n>Contents}'
@@ -72,6 +91,18 @@ UI : {
         //     Label : '{i18n>User Id}'
         // },
 
+=======
+        {
+            Value : content_contentType,
+            Label : '{i18n>Contents}'
+        },
+        {Value : startDate},
+        {Value : endDate},
+        // {
+        //     $Type : 'UI.DataField',
+        //     Value : totalCost
+        // }
+>>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
 
 
     //                         {
@@ -81,14 +112,10 @@ UI : {
     //     Label : 'Column label'
     // },
     ]},
+});
 
-
-},
-
-);
-
-annotate AdAgencyServices.PaymentPlanDetails{
-    preferences_ID  @title:'{i18n>Preferences Id}'
+annotate AdAgencyServices.PaymentPlanDetails {
+    preferences_ID @title : '{i18n>Preferences Id}'
 }
 
 annotate AdAgencyServices.PaymentPlanDetails with {
@@ -105,18 +132,14 @@ annotate AdAgencyServices.PaymentPlanDetails with {
                     // LocalDataProperty : 'content',
                     ValueListProperty : 'contentType',
                 },
-                // {
-                //     $Type             : 'Common.ValueListParameterDisplayOnly',
-                //     ValueListProperty : 'unitOfMeasurement'
-                // },
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
                     ValueListProperty : 'contentSizeLimit'
+                },
+                {
+                     $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'contentCost'
                 }
-                // {
-                //     $Type             : 'Common.ValueListParameterDisplayOnly',
-                //     ValueListProperty : 'contentCost'
-                // },
             ]
         }
     });
@@ -124,38 +147,6 @@ annotate AdAgencyServices.PaymentPlanDetails with {
 
 }
 
-
-// annotate AdAgencyServices.PaymentPlanDetails with {
-//     cSize @(Common : {
-//         FieldControl : #Mandatory,
-//         ValueList    : {
-//             CollectionPath  : 'contentDetails',
-//             Label           : 'Content Size',
-//             SearchSupported : true,
-//             Parameters      : [
-//                 {
-//                     $Type             : 'Common.ValueListParameterInOut',
-//                     LocalDataProperty : 'cSize',
-//                     ValueListProperty : 'contentSizeLimit',
-//                 },
-//                 // {
-//                 //     $Type             : 'Common.ValueListParameterDisplayOnly',
-//                 //     ValueListProperty : 'contentType'
-//                 // },
-//                 {
-//                     $Type             : 'Common.ValueListParameterDisplayOnly',
-//                     ValueListProperty : 'contentType'
-//                 },
-//                 {
-//                     $Type             : 'Common.ValueListParameterDisplayOnly',
-//                     ValueListProperty : 'contentCost'
-//                 },
-//             ]
-//         }
-//     });
-
-
-// }
 
 annotate AdAgencyServices.PaymentPlanDetails with {
     preferences @(Common : {
@@ -184,21 +175,32 @@ annotate AdAgencyServices.PaymentPlanDetails with {
     });
 }
 
-// annotate AdAgencyServices.PaymentPlanDetails with {
-//     userID @(Common : {
-//         FieldControl : #Mandatory,
-//         ValueList    : {
-//             CollectionPath  : 'UserProf',
-//             Label           : 'User profile',
-//             SearchSupported : true,
-//             Parameters      : [{
-//                 $Type             : 'Common.ValueListParameterInOut',
-//                 LocalDataProperty : 'userID',
-//                 ValueListProperty : 'ID'
-//             }]
-//         }
-//     });
-// }
+annotate AdAgencyServices.PaymentPlanDetails with {
+    userID @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'UserProf',
+            Label           : 'User profile',
+            // FetchValues : 2,
+            SearchSupported : true,
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'userID',
+                    ValueListProperty : 'profileId'
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'firstName',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'email'
+                }
+            ]
+        }
+    });
+}
 
 annotate AdAgencyServices.PaymentPlanDetails with {
     adId @(Common : {
@@ -207,15 +209,28 @@ annotate AdAgencyServices.PaymentPlanDetails with {
             CollectionPath  : 'AdDetails',
             Label           : 'Ad Id',
             SearchSupported : true,
-            Parameters      : [{
-                $Type             : 'Common.ValueListParameterInOut',
-                LocalDataProperty : 'adId',
-                ValueListProperty : 'ID'
-            },
-            {
-                $Type             : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'userID'
-            }
+            // DistinctValuesSupported :HasActiveEntity,
+            // PresentationVariantQualifier : 'userID',
+            // SelectionVariantQualifier : 'userID',
+            Parameters      : [
+                {
+                    $Type             : 'Common.ValueListParameterIn',
+                    LocalDataProperty : 'userID',
+                    ValueListProperty : 'userID',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : 'adId',
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'title',
+                },
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'categoryName',
+                }
             ]
         }
     });

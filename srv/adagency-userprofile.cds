@@ -7,4 +7,6 @@ service UserProfile {
 
     }
     entity User    as projection on Ad.User;
+
+    entity Gender as projection on Ad.Gender;
 }

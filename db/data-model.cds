@@ -8,7 +8,9 @@ using {cuid} from '@sap/cds/common';
 
 entity AdDetails : cuid {
     key ID             : UUID        @odata.Type       : 'Edm.String'  @Core.Computed;
-        userID         : String;
+     //  key ID : String @odata.Type       : 'Edm.String'  @Core.Computed;
+        userID         : String; 
+        //@cds.on.insert:$now;
         title          : String;
         textContent    : LargeString;
         adCountry      : String(3);

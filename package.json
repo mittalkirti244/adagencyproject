@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "adagencyproject",
   "version": "1.0.0",
   "description": "A simple CAP project.",
@@ -34,41 +35,81 @@
       "node": true,
       "jest": true,
       "mocha": true
+=======
+    "name": "adagencyproject",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^5",
+        "express": "^4",
+        "hdb": "^0.18.3"
+>>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
     },
-    "globals": {
-      "SELECT": true,
-      "INSERT": true,
-      "UPDATE": true,
-      "DELETE": true,
-      "CREATE": true,
-      "DROP": true,
-      "CDL": true,
-      "CQL": true,
-      "CXL": true,
-      "cds": true
+    "devDependencies": {
+        "@sap/hdi-deploy": "^4.2.0",
+        "@sap/ux-specification": "^1.90.13",
+        "sqlite3": "^5.0.2"
     },
-    "rules": {
-      "no-console": "off",
-      "require-atomic-updates": "off"
-    }
-  },
-  "cds": {
-    "requires": {
-      "country": {
-        "kind": "odata-v2",
-        "model": "srv/external/country",
-        "credentials": {
-          "url": "http://137.116.78.232:8000/sap/opu/odata/sap/API_COUNTRY_SRV/",
-          "username": "51673070",
-          "password": "sap@123"
+    "engines": {
+        "node": ">=14"
+    },
+    "scripts": {
+        "start": "cds run",
+        "watch-project1": "cds watch --open project1/webapp/index.html#fe-lrop-v4",
+        "watch-profile": "cds watch --open profile/webapp/index.html#fe-lrop-v4",
+        "undeploy": "cf undeploy adagencyproject --delete-services --delete-service-keys",
+        "watch-main": "cds watch --open main/webapp/index.html#fe-lrop-v4"
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "es2020": true,
+            "node": true,
+            "jest": true,
+            "mocha": true
+        },
+        "globals": {
+            "SELECT": true,
+            "INSERT": true,
+            "UPDATE": true,
+            "DELETE": true,
+            "CREATE": true,
+            "DROP": true,
+            "CDL": true,
+            "CQL": true,
+            "CXL": true,
+            "cds": true
+        },
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
         }
-      },
-      "db": {
-        "kind": "sqlite",
-        "model": "*",
-        "credentials": {
-          "database": "adproj.db"
+    },
+    "cds": {
+        "requires": {
+            "country": {
+                "kind": "odata-v2",
+                "model": "srv/external/country",
+                "credentials": {
+                    "url": "http://137.116.78.232:8000/sap/opu/odata/sap/API_COUNTRY_SRV/",
+                    "username": "51673070",
+                    "password": "sap@123"
+                }
+            },
+            "db": {
+                "kind": "sql",
+                "credentials": {
+                    "database": "adproj.db"
+                }
+            }
+        },
+        "hana": {
+            "deploy-format": "hdbtable"
         }
+<<<<<<< HEAD
       }
     }
   },
@@ -85,3 +126,16 @@
     "app/paymentplan"
   ]
 }
+=======
+    },
+    "sapux": [
+        "app/project1",
+        "app/category",
+        "app/prefrences",
+        "app/contentdetails",
+        "app/paymentplan",
+        "app/manageorder",
+        "app/profile"
+    ]
+}
+>>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
