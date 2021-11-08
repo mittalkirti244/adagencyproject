@@ -5,6 +5,7 @@ using from './adDetail-service';
 
 annotate ManageOrdersService.ManageOrder with @odata.draft.enabled;
 <<<<<<< HEAD
+<<<<<<< HEAD
 annotate ManageOrdersService.ManageOrder with @( 
 UI:{
      Identification: [{Value:ID}],
@@ -13,6 +14,9 @@ UI:{
     LineItem:[
         
 =======
+=======
+
+>>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
 
 annotate ManageOrdersService.ManageOrder with @(UI : {
     Identification      : [{Value : ID}],
@@ -21,7 +25,11 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
         status_code
     ],
     LineItem            : [
+<<<<<<< HEAD
 >>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
+=======
+
+>>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         {
             $Type : 'UI.DataField',
             Value : ID,
@@ -45,6 +53,10 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
         },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         // {
         //     $Type: 'UI.DataField',
         //     Value: createdBy, 
@@ -61,6 +73,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
            Value : totalAmount, 
            Label:'{i18n>Total Amount}'
            },
+<<<<<<< HEAD
 =======
         {
             $Type : 'UI.DataField',
@@ -68,6 +81,9 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
             Label : '{i18n>Total Amount}'
         },
 >>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
+=======
+
+>>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         {
             $Type : 'UI.DataField',
             Value : status_code,
@@ -92,11 +108,19 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
     // },
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        // {Value : createdBy},
         {Value : createdAt}
 =======
     // ],
 >>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
+=======
+
+       // {Value : createdBy},
+        {Value : createdAt}
+    // ],
+
+>>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
 
     FieldGroup #Order   : {Data : [
 
