@@ -53,7 +53,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
            Value : totalAmount, 
            Label:'{i18n>Total Amount}'
            },
-
+\
         {
             $Type : 'UI.DataField',
             Value : status_code,
@@ -80,6 +80,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
 
        // {Value : createdBy},
         {Value : createdAt}
+
     // ],
 
 
