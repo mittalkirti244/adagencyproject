@@ -34,30 +34,11 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
             Label : '{i18n>Country}'
         },
 
-<<<<<<< HEAD
-        // {
-        //     $Type: 'UI.DataField',
-        //     Value: createdBy, 
-        //     Label:'{i18n>Customer Name}'
-        //     },
-          {
-            $Type: 'UI.DataField',
-            Value: createdAt, 
-            Label:'{i18n>Order Date}'
-            },
-
-       {
-           $Type: 'UI.DataField',
-           Value : totalAmount, 
-           Label:'{i18n>Total Amount}'
-           },
-=======
         {
             $Type : 'UI.DataField',
             Value : totalAmount,
             Label : '{i18n>Total Amount}'
         },
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
         {
             $Type : 'UI.DataField',
             Value : status_code,
@@ -81,12 +62,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
 
     // },
 
-<<<<<<< HEAD
-       // {Value : createdBy},
-        {Value : createdAt}
-=======
     // ],
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
 
     FieldGroup #Order   : {Data : [
 
@@ -160,7 +136,7 @@ annotate ManageOrdersService.ManageOrder with {
         FieldControl : #Mandatory,
         ValueList    : {
             CollectionPath  : 'UserDetails',
-            Label           : 'User profile',
+            Label           : 'User profile',
             // FetchValues : 2,
             SearchSupported : true,
             Parameters      : [
