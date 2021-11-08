@@ -5,6 +5,7 @@ using from './adDetail-service';
 
 annotate ManageOrdersService.ManageOrder with @odata.draft.enabled;
 
+
 annotate ManageOrdersService.ManageOrder with @(UI : {
     Identification      : [{Value : ID}],
     SelectionFields     : [
@@ -12,6 +13,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
         status_code
     ],
     LineItem            : [
+
         {
             $Type : 'UI.DataField',
             Value : ID,
@@ -34,7 +36,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
             Label : '{i18n>Country}'
         },
 
-<<<<<<< HEAD
+
         // {
         //     $Type: 'UI.DataField',
         //     Value: createdBy, 
@@ -51,13 +53,7 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
            Value : totalAmount, 
            Label:'{i18n>Total Amount}'
            },
-=======
-        {
-            $Type : 'UI.DataField',
-            Value : totalAmount,
-            Label : '{i18n>Total Amount}'
-        },
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
+\
         {
             $Type : 'UI.DataField',
             Value : status_code,
@@ -81,12 +77,12 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
 
     // },
 
-<<<<<<< HEAD
+
        // {Value : createdBy},
         {Value : createdAt}
-=======
+
     // ],
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
+
 
     FieldGroup #Order   : {Data : [
 
