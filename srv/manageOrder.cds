@@ -4,20 +4,7 @@ using from './adagency-service';
 using from './adDetail-service';
 
 annotate ManageOrdersService.ManageOrder with @odata.draft.enabled;
-<<<<<<< HEAD
-<<<<<<< HEAD
-annotate ManageOrdersService.ManageOrder with @( 
-UI:{
-     Identification: [{Value:ID}],
-    
-     SelectionFields: [ID,status],
-    LineItem:[
         
-=======
-=======
-
->>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
-
 annotate ManageOrdersService.ManageOrder with @(UI : {
     Identification      : [{Value : ID}],
     SelectionFields     : [
@@ -25,11 +12,6 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
         status_code
     ],
     LineItem            : [
-<<<<<<< HEAD
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
-=======
-
->>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         {
             $Type : 'UI.DataField',
             Value : ID,
@@ -52,38 +34,28 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
             Label : '{i18n>Country}'
         },
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         // {
         //     $Type: 'UI.DataField',
         //     Value: createdBy, 
         //     Label:'{i18n>Customer Name}'
         //     },
-          {
-            $Type: 'UI.DataField',
-            Value: createdAt, 
-            Label:'{i18n>Order Date}'
-            },
+        //   {
+        //     $Type: 'UI.DataField',
+        //     Value: createdAt, 
+        //     Label:'{i18n>Order Date}'
+        //     },
 
        {
            $Type: 'UI.DataField',
            Value : totalAmount, 
            Label:'{i18n>Total Amount}'
            },
-<<<<<<< HEAD
-=======
         {
             $Type : 'UI.DataField',
             Value : totalAmount,
             Label : '{i18n>Total Amount}'
         },
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
-=======
 
->>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
         {
             $Type : 'UI.DataField',
             Value : status_code,
@@ -107,20 +79,15 @@ annotate ManageOrdersService.ManageOrder with @(UI : {
 
     // },
 
-<<<<<<< HEAD
-<<<<<<< HEAD
        // {Value : createdBy},
-        {Value : createdAt}
-=======
-    // ],
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
-=======
-
-       // {Value : createdBy},
-        {Value : createdAt}
+       // {Value : createdAt}
     // ],
 
->>>>>>> 826e00a354f0e6a8ae0f2175d57ee16e245d1b5e
+       // {Value : createdBy},
+       // {Value : createdAt}
+
+    // ],
+
 
     FieldGroup #Order   : {Data : [
 
