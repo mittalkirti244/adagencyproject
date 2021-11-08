@@ -6,3 +6,5 @@ using from './contentdetails/annotations';
 using from './paymentplan/annotations';
 using from './manageorder/annotations';
 using from './profile/annotations';
+using from './paymentplan/annotations';
+using from './paymentplan/annotations';

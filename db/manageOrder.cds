@@ -1,21 +1,31 @@
 namespace adagency;
 
-using {cuid, managed} from '@sap/cds/common';
+using {
+    cuid,
+    managed
+} from '@sap/cds/common';
 
-entity ManageOrder : cuid, managed {
+using from './schema';
+using from './data-model';
+using from './userSchema';
+
+entity ManageOrder : cuid {
     key ID          : UUID @odata.Type : 'Edm.String';
+        userID      : String;
+        adID        : String;
         planID      : String;
         //description : LargeString;
         address     : LargeString;
         country     : String;
-        totalAmount : String;
-        status      : OrderStatus;      
+        totalAmount : Integer;
+        status      : Association to MyOrderStatus;
 }
 
-type OrderStatus : String enum{
-    Confirmed;Pending;
-}
+// type OrderStatus : String enum {
+//     Confirmed;
+//     Pending;
+// }
 
-entity MyOrderStatus{
-    key code: String;
+entity MyOrderStatus {
+    key code : String;
 }
