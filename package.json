@@ -1,41 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "adagencyproject",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^5",
-    "express": "^4",
-    "hdb": "^0.18.3"
-  },
-  "devDependencies": {
-    "@sap/hdi-deploy": "^4.2.0",
-    "@sap/ux-specification": "^1.90.12",
-    "sqlite3": "^5.0.2"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "scripts": {
-    "start": "cds run",
-    "watch-project1": "cds watch --open project1/webapp/index.html#fe-lrop-v4",
-    "watch-profile": "cds watch --open profile/webapp/index.html#fe-lrop-v4",
-    "undeploy": "cf undeploy adagencyproject --delete-services --delete-service-keys",
-    "watch-main": "cds watch --open main/webapp/index.html#fe-lrop-v4",
-    "watch-preferences": "cds watch --open preferences/webapp/index.html#fe-lrop-v4",
-    "watch-paymentplan": "cds watch --open paymentplan/webapp/index.html#fe-lrop-v4"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "es2020": true,
-      "node": true,
-      "jest": true,
-      "mocha": true
-=======
     "name": "adagencyproject",
     "version": "1.0.0",
     "description": "A simple CAP project.",
@@ -46,7 +9,6 @@
         "@sap/cds": "^5",
         "express": "^4",
         "hdb": "^0.18.3"
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
     },
     "devDependencies": {
         "@sap/hdi-deploy": "^4.2.0",
@@ -109,24 +71,6 @@
         "hana": {
             "deploy-format": "hdbtable"
         }
-<<<<<<< HEAD
-      }
-    }
-  },
-  "sapux": [
-    "app/project1",
-    "app/category",
-    "app/prefrences",
-    "app/contentdetails",
-    "app/paymentplan",
-    "app/manageorder",
-    "app/profile",
-    "app/main",
-    "app/preferences",
-    "app/paymentplan"
-  ]
-}
-=======
     },
     "sapux": [
         "app/project1",
@@ -138,4 +82,3 @@
         "app/profile"
     ]
 }
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8

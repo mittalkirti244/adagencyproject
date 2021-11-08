@@ -1,5 +1,10 @@
 profileId;firstName;lastName;email;phoneNumber;password;street;city;state;pinCode;gender_code
 5169;Barret;Beggan;bbeggan0@deliciousdays.com;225-527-7537;123;41 Grim Center;Baton Rouge;LA;70826;M
 5167;Layton;Spikeings;lspikeings1@google.es;864-646-7749;1321;41 Buhler Alley;Spartanburg;SC;29319;F
-5234@adagency.com;Ernst;O'Beirne;eobeirne2@latimes.com;505-923-1999;152;08 Knutson Road;Albuquerque;NM;87201;F
+5234;Ernst;O'Beirne;eobeirne2@latimes.com;505-923-1999;152;08 Knutson Road;Albuquerque;NM;87201;F
 2134;Marlane;Hammelberg;mhammelberg3@squidoo.com;502-230-4523;157;9 Nobel Drive;Louisville;KY;40215;M
+1212;Kirti;Mittal;kirti@gmail.com;9876543210;1234;A21;Jaipur;Rajasthan;123456;F
+1213;Anand;Verma;Anand@gmail.com;9823456170;0987;B81,noida sector 101;Noida;U.P.;201301;M
+1214;Ashutosh;Singh;a_Singh@gmail.com;7890654322;9876;C78,opposite spectrum mall;Gorakhpur;U.P.;273001;M
+1215;Shaheen;Ansari;shaheen@gmail.com;9876054332;1243;D2-110,plot 11;Noida;U.P.;201301;F
+1216;Yerram;Viveka;viveka@gmail.com;7896543210;8765;E4-109,near to Shiv temple;Lucknow;U.P.;12345;F
