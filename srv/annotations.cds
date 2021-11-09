@@ -53,12 +53,13 @@ annotate AdDetailService.AdDetails with @(UI : {
 
     FieldGroup #General : {Data : [
         {Value : userID},
-        {Value : title},
-        {Value : textContent},
-        {
+         {
             Value : category_ID,
             Label : 'Category'
         },
+        {Value : title},
+        {Value : textContent},
+       
         {Value : adCountry},
         {
             Value : image,
