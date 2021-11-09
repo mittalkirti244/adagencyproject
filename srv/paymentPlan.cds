@@ -10,7 +10,7 @@ annotate AdAgencyServices.PaymentPlanDetails with @(
 
 
 UI : {
-    SelectionFields     : [preferences_ID],
+    SelectionFields     : [preferences.preferenceType,content_contentType],
     LineItem            : [
         //  {Value: cType},
         {

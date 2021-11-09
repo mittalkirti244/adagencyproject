@@ -1,7 +1,7 @@
 {
     "_version": "1.32.0",
     "sap.app": {
-        "id": "prefrences",
+        "id": "preferences",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -47,7 +47,7 @@
             "css": []
         },
         "dependencies": {
-            "minUI5Version": "1.95.0",
+            "minUI5Version": "1.96.0",
             "libs": {
                 "sap.ui.core": {},
                 "sap.fe.templates": {}

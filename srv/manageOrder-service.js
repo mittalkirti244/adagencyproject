@@ -18,4 +18,3 @@ module.exports = cds.service.impl(async function () {
 //     const { contentCost} = await cds.tx(req).run(SELECT.one.from(req.target).columns('contentCost'))
 //     req.data.totalAmount =  prefCost + contentCost
 // }
-
