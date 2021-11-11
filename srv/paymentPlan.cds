@@ -10,7 +10,7 @@ annotate AdAgencyServices.PaymentPlanDetails with @(
 
 
 UI : {
-    SelectionFields     : [preferences_ID],
+   // SelectionFields     : [preferences.preferenceType,content_contentType],
     LineItem            : [
         //  {Value: cType},
         {
@@ -53,13 +53,6 @@ UI : {
 
     ],
     FieldGroup #General : {Data : [
-<<<<<<< HEAD
-        //{Value: ID, Label:'{i18n>Book ID}'},
-
-                {
-            Value : adId,
-            Label : '{i18n>Ad Id}'
-=======
         {
             Value : userID,
             Label : '{i18n>Select User}'
@@ -67,31 +60,11 @@ UI : {
         {
             Value : adId,
             Label : '{i18n>Select User Ad}'
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
         },
         {
             Value : preferences_ID,
             Label : '{i18n>Preferences}'
         },
-<<<<<<< HEAD
-                {
-            Value : content_contentType,
-            Label : '{i18n>Contents}'
-        },
-        // {Value: content_contentType,Label:'{i18n>Contents}'},
-
-        //{Value:cType},
-        //{Value:cSize},
-        // {Value:cCost},
-        {Value : startDate},
-
-        {Value : endDate},
-        // {
-        //     Value : userID,
-        //     Label : '{i18n>User Id}'
-        // },
-
-=======
         {
             Value : content_contentType,
             Label : '{i18n>Contents}'
@@ -102,7 +75,6 @@ UI : {
         //     $Type : 'UI.DataField',
         //     Value : totalCost
         // }
->>>>>>> 2a2a12bd763d61c0ef37bf44397cf867aca52dc8
 
 
     //                         {

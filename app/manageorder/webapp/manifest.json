@@ -7,7 +7,7 @@
         "applicationVersion": {
             "version": "1.0.0"
         },
-        "title": "{{appTitle}}",
+        "title": "{{Manage Order}}",
         "description": "{{appDescription}}",
         "dataSources": {
             "mainService": {

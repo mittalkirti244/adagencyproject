@@ -18,7 +18,7 @@ entity ManageOrder : cuid {
         address     : LargeString;
         country     : String;
         totalAmount : Integer;
-        status      : Association to MyOrderStatus;
+        status      : Association to MyOrderStatus @title : 'Order Status';
 }
 
 // type OrderStatus : String enum {
